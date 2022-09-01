@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Swager Swapi
+  termsOfService: ""
+  description: "Swapi integracion node.js +DynamoDb "
+  contact:
+    email: joseantonymundacaangeles@gmail.com
+    url: ""
+  license:
+    name: jmundaca Swapi
+    url: "https://google.com"
+  x-logo:
+    url: "https://png.pngitem.com/pimgs/s/57-579127_darth-vader-star-wars-graphics-design-dxf-eps.png"
+tags:
+  - name: SWAPI
+    description: Servicios Swapi
+servers:
+  - url: "https://rh9djww5n8.execute-api.us-east-1.amazonaws.com"
+paths:
+  "/dev/api/people/{id}":
+    $ref: "paths/api@people@id.yaml"
+  "/dev/api/people/submit":
+    $ref: "paths/api@people@submit.yaml"
+  "/dev/api/people":
+    $ref: "paths/api@people@all.yaml"
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: api_key
